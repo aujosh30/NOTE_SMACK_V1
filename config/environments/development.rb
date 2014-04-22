@@ -13,8 +13,9 @@ Rails.application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  # Don't care if the mailer can't send. JCK - Probably on want to set this
+  # for Devl Env
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -31,6 +32,25 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
+
+  #JCK - http://stevechristie.tumblr.com/post/35152797572/setting-up-the-mailer-for-devise
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+      address: "smtp.gmail.com",
+      port: 587,
+      domain: ENV["GMAIL_DOMAIN"],
+      authentication: "plain",
+      enable_starttls_auto: true,
+      user_name: ENV["GMAIL_USERNAME"],
+      password: ENV["GMAIL_PASSWORD"]
+  }
+
+  #JCK - For Prod: config.action_mailer.default_url_options = { :host => 'http://notesmack.com' }
+  #Adding Devise Mailer Functionality
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

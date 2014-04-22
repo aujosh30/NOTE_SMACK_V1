@@ -1,13 +1,20 @@
 Rails.application.routes.draw do
-  devise_for :users
+  resources :note_sets, :path => "notesets"
+
+
+  devise_for :users, :path_names => { :sign_up => "register" }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'note_sets#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+
+  get 'home/navigateHome' => "note_sets#index"
+  get ":title/p/:id" => "note_sets#show", :id => /[0-9]+/
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

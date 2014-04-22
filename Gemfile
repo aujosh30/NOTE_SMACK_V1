@@ -39,4 +39,10 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 
-gem "devise"
+gem 'devise'
+
+gem 'carrierwave'
+
+group :development, :test do
+  gem 'foreman'
+end
