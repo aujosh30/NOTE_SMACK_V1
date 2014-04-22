@@ -10,6 +10,14 @@ Things you may want to cover:
 * System dependencies
 
 * Configuration
+Couple of things you will need to get your app up and running.
+
+1.  Create a new mysql database called NOTE_SMACK_V1_development;  These are defined in the
+database.yml file.
+2.  As you see in the database.yml file, I am using environment variables for passwords so we
+don't share these on Git...Check out this like fore what I followed to setup these variables.
+I also setup variables for our email capabilites...
+3. I haven't yet linked up the Go daddy DB but will do that shortly.
 
 * Database creation
 
