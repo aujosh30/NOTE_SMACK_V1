@@ -19,6 +19,8 @@ don't share these on Git...Check out this like fore what I followed to setup the
 I also setup variables for our email capabilites...
 3. I haven't yet linked up the Go daddy DB but will do that shortly.
 
+4. Also, to use these env configs locally, i added the Foreman Gem...Intead of rails server, use --> foreman start
+
 * Database creation
 
 * Database initialization
