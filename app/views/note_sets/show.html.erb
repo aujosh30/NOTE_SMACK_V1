@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @note_set.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @note_set.description %>
+</p>
+
+<%= link_to 'Edit', edit_note_set_path(@note_set) %> |
+<%= link_to 'Back', note_sets_path %>

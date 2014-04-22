@@ -16,8 +16,8 @@
 /tmp
 
 #JCK - Ignore Env Variables
-.env
-Procfile
+/.env
+/Procfile
 
 #JCK - JetBrains Ignore files
 /.idea/workspace.xml
